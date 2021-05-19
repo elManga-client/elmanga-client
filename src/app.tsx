@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import TestBlock from './TestBlock';
+import RandomManga from './components/RandomManga';
+import './app.css';
 
 function render() {
   ReactDOM.render(
     <div>
-      <TestBlock />
+      <RandomManga />
     </div>,
     document.getElementById('root')
   );

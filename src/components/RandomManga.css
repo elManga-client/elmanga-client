@@ -1,0 +1,8 @@
+.container-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: tomato;
+}
