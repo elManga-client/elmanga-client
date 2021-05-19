@@ -77,3 +77,6 @@ ipcMain.on('test-action', async (event, { message }) => {
     }
   }
 });
+
+import update from 'update-electron-app';
+update();
