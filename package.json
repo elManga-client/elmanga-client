@@ -1,7 +1,7 @@
 {
   "name": "electron-manga-client",
   "productName": "Electron Manga Client",
-  "version": "1.0.0",
+  "version": "0.1.0-alpha",
   "description": "Manga client",
   "main": ".webpack/main",
   "scripts": {
