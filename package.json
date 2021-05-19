@@ -1,8 +1,8 @@
 {
-  "name": "electron-ts-webpack-pg",
-  "productName": "electron-ts-webpack-pg",
+  "name": "electron-manga-client",
+  "productName": "Electron Manga Client",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Manga client",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
