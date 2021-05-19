@@ -10,7 +10,7 @@ export interface Manga {
 }
 
 export interface MangaAttributes {
-  title: Record<string, unknown>;
+  title: Record<string, string>;
   altTitles: Record<string, unknown>[];
   description: Record<string, unknown>;
   isLocked: boolean;
@@ -28,7 +28,7 @@ export interface MangaAttributes {
   updatedAt: string;
 }
 
-export default interface MangaResponse {
+export interface MangaResponse {
   result: Results;
   data: Manga[];
   relationships: Relationship[];
