@@ -1,11 +1,20 @@
-enum Results {
-  ok = 'ok',
-  error = 'error',
+export type MangaResponse = Response<Manga>;
+export type ChapterResponse = Response<Manga>;
+
+export enum ResultStatuses {
+  Ok = 'ok',
+  Error = 'error',
+}
+
+export interface Response<T> {
+  result: ResultStatuses;
+  data: T[];
+  relationships: Relationship[];
 }
 
 export interface Manga {
   id: string;
-  type: string;
+  type: 'manga';
   attributes: MangaAttributes;
 }
 
@@ -28,15 +37,9 @@ export interface MangaAttributes {
   updatedAt: string;
 }
 
-export interface MangaResponse {
-  result: Results;
-  data: Manga[];
-  relationships: Relationship[];
-}
-
 export interface Chapter {
   id: string;
-  type: string;
+  type: 'chapter';
   attributes: ChapterAttributes;
 }
 
@@ -57,5 +60,16 @@ export interface ChapterAttributes {
 
 export interface Relationship {
   id: string;
-  type: string;
+  type: RelationshipTypes;
+}
+
+export enum RelationshipTypes {
+  Manga = 'manga',
+  Chapter = 'chapter',
+  Author = 'author',
+  Artist = 'artist',
+  ScanlationGroup = 'scanlation_group',
+  Tag = 'tag',
+  User = 'user',
+  CustomList = 'custom_list',
 }
