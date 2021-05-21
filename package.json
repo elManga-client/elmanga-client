@@ -1,7 +1,7 @@
 {
-  "name": "electron-manga-client",
-  "productName": "Electron Manga Client",
-  "version": "0.1.0-alpha",
+  "name": "elmanga-client",
+  "productName": "ElManga Client",
+  "version": "0.1.1-alpha",
   "description": "Manga client",
   "main": ".webpack/main",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/noisyboy25/electron-manga-client.git"
+    "url": "https://github.com/noisyboy25/elmanga-client.git"
   },
   "license": "MIT",
   "config": {
@@ -47,7 +47,7 @@
           "config": {
             "repository": {
               "owner": "noisyboy25",
-              "name": "electron-manga-client"
+              "name": "elmanga-client"
             },
             "prerelease": true
           }
