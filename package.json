@@ -1,6 +1,6 @@
 {
   "name": "elmanga-client",
-  "productName": "ElManga Client",
+  "productName": "elManga Client",
   "version": "0.1.1-alpha",
   "description": "Manga client",
   "main": ".webpack/main",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/noisyboy25/elmanga-client.git"
+    "url": "https://github.com/elManga-client/elmanga-client.git"
   },
   "license": "MIT",
   "config": {
@@ -46,7 +46,7 @@
           "name": "@electron-forge/publisher-github",
           "config": {
             "repository": {
-              "owner": "noisyboy25",
+              "owner": "elManga-client",
               "name": "elmanga-client"
             },
             "prerelease": true
