@@ -98,6 +98,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
+    "@elmanga/mangadex-lib": "^0.1.4",
     "@types/electron": "^1.6.10",
     "electron-fetch": "^1.7.3",
     "electron-squirrel-startup": "^1.0.0",

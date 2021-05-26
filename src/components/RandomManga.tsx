@@ -1,6 +1,6 @@
+import { Manga } from '@elmanga/mangadex-lib/dist/interfaces';
 import { ipcRenderer } from 'electron';
 import React, { useEffect, useState } from 'react';
-import { Manga } from '../lib/mangadex/interfaces';
 import './RandomManga.css';
 
 const RandomManga = (): JSX.Element => {
