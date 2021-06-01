@@ -1,5 +1,4 @@
 import { Manga } from '@elmanga/mangadex-lib/dist/interfaces';
-import { ipcRenderer } from 'electron';
 import React, { useEffect, useState } from 'react';
 import './RandomManga.css';
 
@@ -17,20 +16,19 @@ const RandomManga = (): JSX.Element => {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    listenTestMessage();
+    listenRandomManga();
   }, []);
 
   useEffect(() => {
     console.log(`${imagesLoaded}/${pages.length}`);
   }, [imagesLoaded, pages]);
 
-  const listenTestMessage = async () => {
-    ipcRenderer.on(
-      'test-reply',
-      (
-        _event,
-        args: { pageUrls?: string[]; error?: string; manga?: Manga }
-      ) => {
+  const listenRandomManga = async () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    window.api.receive(
+      'random-manga-response',
+      (args: { pageUrls?: string[]; error?: string; manga?: Manga }) => {
         console.log(args);
         const { pageUrls, error, manga } = args;
         setErrorMessage(error);
@@ -46,8 +44,10 @@ const RandomManga = (): JSX.Element => {
     );
   };
 
-  const testAction = () => {
-    ipcRenderer.send('test-action', { message: 'test' });
+  const fetchRandomManga = () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    window.api.send('random-manga-request', { message: 'test' });
   };
 
   return (
@@ -55,7 +55,7 @@ const RandomManga = (): JSX.Element => {
       <div className="container-flex">
         <div>
           <h3>Random manga chapter</h3>
-          <button onClick={() => testAction()}>Boop</button>
+          <button onClick={() => fetchRandomManga()}>Boop</button>
           <progress
             className={`progress-images-loaded ${
               pages.length === imagesLoaded && 'hidden'
