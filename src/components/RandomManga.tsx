@@ -26,7 +26,7 @@ const RandomManga = (): JSX.Element => {
   const listenRandomManga = async () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
-    window.api.receive(
+    window.api.on(
       'random-manga-response',
       (args: { pageUrls?: string[]; error?: string; manga?: Manga }) => {
         console.log(args);
@@ -47,7 +47,7 @@ const RandomManga = (): JSX.Element => {
   const fetchRandomManga = () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
-    window.api.send('random-manga-request', { message: 'test' });
+    window.api.send('random-manga-request', {});
   };
 
   return (

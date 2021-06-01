@@ -16,7 +16,7 @@ const MangaList = (): JSX.Element => {
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-ignore
-      window.api.receive('manga-list-response', (data) => {
+      window.api.on('manga-list-response', (data) => {
         console.log('manga-list-response: ', data);
         if (data.mangaList) setMangaList(data.mangaList);
       });

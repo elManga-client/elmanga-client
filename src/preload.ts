@@ -8,11 +8,11 @@ contextBridge.exposeInMainWorld('api', {
       ipcRenderer.send(channel, data);
     }
   },
-  receive: (channel: string, func: (...args: unknown[]) => void) => {
+  on: (channel: string, listener: (...args: unknown[]) => void) => {
     const validChannels = ['random-manga-response', 'manga-list-response'];
 
     if (validChannels.includes(channel)) {
-      ipcRenderer.on(channel, (_event, ...args) => func(...args));
+      ipcRenderer.on(channel, (_event, ...args) => listener(...args));
     }
   },
 });
